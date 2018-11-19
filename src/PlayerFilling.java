@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class PlayerFilling {
@@ -22,6 +21,17 @@ public class PlayerFilling {
             player.setPassesTotal(ParsedInfo.parsedPassesTotal(id));
             player.setPassesAccurate(ParsedInfo.parsedPassesAccurate(id));
             player.setPassesKey(ParsedInfo.parsedPassesKey(id));
+            player.setShotsTotal(ParsedInfo.parsedShotsTotal(id));
+            player.setShotsOnTarget(ParsedInfo.parsedShotsOnTarget(id));
+            player.setShotsOffTarget(ParsedInfo.parsedShotsOffTarget(id));
+            player.setClearances(ParsedInfo.parsedClearances(id));
+            player.setInterseptions(ParsedInfo.parsedInterseptions(id));
+            player.setArialsTotal(ParsedInfo.parsedArialsTotal(id));
+            player.setArialsWon(ParsedInfo.parsedArialsWon(id));
+            player.setTacklesTotal(ParsedInfo.parsedTacklesTotal(id));
+            player.setTacklesSuccessful(ParsedInfo.parsedTacklesSuccessful(id));
+            player.setDriblesTotal(ParsedInfo.parsedDribblesTotal(id));
+            player.setDribblesLost(ParsedInfo.parsedDribblesLost(id));
             data.put(squad[i], player);
         }
         return data;

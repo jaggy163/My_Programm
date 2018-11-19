@@ -3,7 +3,7 @@ public class FCKSPlayer {
     private boolean isManOfTheMatch, isFirstEleven;
     private String position, name;
     private double shotsTotal, shotsOffTarget, shotsOnTarget, clearances, interseptions, passesTotal, passesAccurate,
-            passesKey, passSuccess, arialsTotal, arialsWon, foulsCommited, tacklesTotal, tacklesSuccessful, dribblesWon,
+            passesKey, passSuccess, arialsTotal, arialsWon, foulsCommited, tacklesTotal, tacklesSuccessful, dribblesLost,
             dribblesTotal;
     private double ratings;
 
@@ -183,12 +183,12 @@ public class FCKSPlayer {
         this.tacklesSuccessful = tacklesSuccessful;
     }
 
-    public double getDribblesWon() {
-        return dribblesWon;
+    public double getDribblesLost() {
+        return dribblesLost;
     }
 
-    public void setDribblesWon(double dribblesWon) {
-        this.dribblesWon = dribblesWon;
+    public void setDribblesLost(double dribblesLost) {
+        this.dribblesLost = dribblesLost;
     }
 
     public double getDribblesTotal() {

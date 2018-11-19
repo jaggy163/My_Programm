@@ -329,4 +329,445 @@ public class ParsedInfo {
         return passesTotal;
     }
 
+    public static double parsedShotsTotal (int id) throws IOException {
+        Scanner scanner = new Scanner(new FileReader(fileName));
+        String position=null;
+        boolean access=false;
+        double shotsTotal=0;
+        while (scanner.hasNext()) {
+            if (scanner.next().equals("matchCentreData")) {
+                scanner.useDelimiter("[\\Q\",:\\E]+");
+                access = true;
+            }
+            if (scanner.next().equals("Krylya Sovetov Samara") && access) {
+                while(scanner.hasNext()) {
+                    if (scanner.next().equals("playerId") && scanner.nextInt()==id) {
+                        while (scanner.hasNext()) {
+                            String string = scanner.next();
+                            if (string.equals("playerId") || string.equals("managerName")) { break; }
+                            if (string.equals("shotsTotal")) {
+                                scanner.next();
+//                                scanner.next();
+                                scanner.useDelimiter("[\\Q\",:\\E]+");
+
+                                while (true) {
+                                    String str = scanner.next();
+                                    if (str.contains("}")) {
+                                        shotsTotal+=Double.parseDouble(str.substring(0, str.length()-1));
+                                        break; }
+                                    if (str.contains(".")) {
+                                        shotsTotal+=Double.parseDouble(str);
+                                    }
+                                }
+                                break;
+                            }
+                        } break;
+                    }
+                } break;
+            }
+        }
+        return shotsTotal;
+    }
+
+    public static double parsedShotsOnTarget (int id) throws IOException {
+        Scanner scanner = new Scanner(new FileReader(fileName));
+        String position=null;
+        boolean access=false;
+        double shotsOnTarget=0;
+        while (scanner.hasNext()) {
+            if (scanner.next().equals("matchCentreData")) {
+                scanner.useDelimiter("[\\Q\",:\\E]+");
+                access = true;
+            }
+            if (scanner.next().equals("Krylya Sovetov Samara") && access) {
+                while(scanner.hasNext()) {
+                    if (scanner.next().equals("playerId") && scanner.nextInt()==id) {
+                        while (scanner.hasNext()) {
+                            String string = scanner.next();
+                            if (string.equals("playerId") || string.equals("managerName")) { break; }
+                            if (string.equals("shotsOnTarget")) {
+                                scanner.next();
+//                                scanner.next();
+                                scanner.useDelimiter("[\\Q\",:\\E]+");
+
+                                while (true) {
+                                    String str = scanner.next();
+                                    if (str.contains("}")) {
+                                        shotsOnTarget+=Double.parseDouble(str.substring(0, str.length()-1));
+                                        break; }
+                                    if (str.contains(".")) {
+                                        shotsOnTarget+=Double.parseDouble(str);
+                                    }
+                                }
+                                break;
+                            }
+                        } break;
+                    }
+                } break;
+            }
+        }
+        return shotsOnTarget;
+    }
+
+    public static double parsedShotsOffTarget (int id) throws IOException {
+        Scanner scanner = new Scanner(new FileReader(fileName));
+        String position=null;
+        boolean access=false;
+        double shotsOffTarget=0;
+        while (scanner.hasNext()) {
+            if (scanner.next().equals("matchCentreData")) {
+                scanner.useDelimiter("[\\Q\",:\\E]+");
+                access = true;
+            }
+            if (scanner.next().equals("Krylya Sovetov Samara") && access) {
+                while(scanner.hasNext()) {
+                    if (scanner.next().equals("playerId") && scanner.nextInt()==id) {
+                        while (scanner.hasNext()) {
+                            String string = scanner.next();
+                            if (string.equals("playerId") || string.equals("managerName")) { break; }
+                            if (string.equals("shotsOffTarget")) {
+                                scanner.next();
+//                                scanner.next();
+                                scanner.useDelimiter("[\\Q\",:\\E]+");
+
+                                while (true) {
+                                    String str = scanner.next();
+                                    if (str.contains("}")) {
+                                        shotsOffTarget+=Double.parseDouble(str.substring(0, str.length()-1));
+                                        break; }
+                                    if (str.contains(".")) {
+                                        shotsOffTarget+=Double.parseDouble(str);
+                                    }
+                                }
+                                break;
+                            }
+                        } break;
+                    }
+                } break;
+            }
+        }
+        return shotsOffTarget;
+    }
+
+    public static double parsedClearances (int id) throws IOException {
+        Scanner scanner = new Scanner(new FileReader(fileName));
+        String position=null;
+        boolean access=false;
+        double clearances=0;
+        while (scanner.hasNext()) {
+            if (scanner.next().equals("matchCentreData")) {
+                scanner.useDelimiter("[\\Q\",:\\E]+");
+                access = true;
+            }
+            if (scanner.next().equals("Krylya Sovetov Samara") && access) {
+                while(scanner.hasNext()) {
+                    if (scanner.next().equals("playerId") && scanner.nextInt()==id) {
+                        while (scanner.hasNext()) {
+                            String string = scanner.next();
+                            if (string.equals("playerId") || string.equals("managerName")) { break; }
+                            if (string.equals("clearances")) {
+                                scanner.next();
+//                                scanner.next();
+                                scanner.useDelimiter("[\\Q\",:\\E]+");
+
+                                while (true) {
+                                    String str = scanner.next();
+                                    if (str.contains("}")) {
+                                        clearances+=Double.parseDouble(str.substring(0, str.length()-1));
+                                        break; }
+                                    if (str.contains(".")) {
+                                        clearances+=Double.parseDouble(str);
+                                    }
+                                }
+                                break;
+                            }
+                        } break;
+                    }
+                } break;
+            }
+        }
+        return clearances;
+    }
+
+    public static double parsedInterseptions (int id) throws IOException {
+        Scanner scanner = new Scanner(new FileReader(fileName));
+        String position=null;
+        boolean access=false;
+        double interseptions=0;
+        while (scanner.hasNext()) {
+            if (scanner.next().equals("matchCentreData")) {
+                scanner.useDelimiter("[\\Q\",:\\E]+");
+                access = true;
+            }
+            if (scanner.next().equals("Krylya Sovetov Samara") && access) {
+                while(scanner.hasNext()) {
+                    if (scanner.next().equals("playerId") && scanner.nextInt()==id) {
+                        while (scanner.hasNext()) {
+                            String string = scanner.next();
+                            if (string.equals("playerId") || string.equals("managerName")) { break; }
+                            if (string.equals("interseptions")) {
+                                scanner.next();
+//                                scanner.next();
+                                scanner.useDelimiter("[\\Q\",:\\E]+");
+
+                                while (true) {
+                                    String str = scanner.next();
+                                    if (str.contains("}")) {
+                                        interseptions+=Double.parseDouble(str.substring(0, str.length()-1));
+                                        break; }
+                                    if (str.contains(".")) {
+                                        interseptions+=Double.parseDouble(str);
+                                    }
+                                }
+                                break;
+                            }
+                        } break;
+                    }
+                } break;
+            }
+        }
+        return interseptions;
+    }
+
+    public static double parsedArialsTotal (int id) throws IOException {
+        Scanner scanner = new Scanner(new FileReader(fileName));
+        String position=null;
+        boolean access=false;
+        double arialsTotal=0;
+        while (scanner.hasNext()) {
+            if (scanner.next().equals("matchCentreData")) {
+                scanner.useDelimiter("[\\Q\",:\\E]+");
+                access = true;
+            }
+            if (scanner.next().equals("Krylya Sovetov Samara") && access) {
+                while(scanner.hasNext()) {
+                    if (scanner.next().equals("playerId") && scanner.nextInt()==id) {
+                        while (scanner.hasNext()) {
+                            String string = scanner.next();
+                            if (string.equals("playerId") || string.equals("managerName")) { break; }
+                            if (string.equals("arialsTotal")) {
+                                scanner.next();
+//                                scanner.next();
+                                scanner.useDelimiter("[\\Q\",:\\E]+");
+
+                                while (true) {
+                                    String str = scanner.next();
+                                    if (str.contains("}")) {
+                                        arialsTotal+=Double.parseDouble(str.substring(0, str.length()-1));
+                                        break; }
+                                    if (str.contains(".")) {
+                                        arialsTotal+=Double.parseDouble(str);
+                                    }
+                                }
+                                break;
+                            }
+                        } break;
+                    }
+                } break;
+            }
+        }
+        return arialsTotal;
+    }
+
+    public static double parsedArialsWon (int id) throws IOException {
+        Scanner scanner = new Scanner(new FileReader(fileName));
+        String position=null;
+        boolean access=false;
+        double arialsWon=0;
+        while (scanner.hasNext()) {
+            if (scanner.next().equals("matchCentreData")) {
+                scanner.useDelimiter("[\\Q\",:\\E]+");
+                access = true;
+            }
+            if (scanner.next().equals("Krylya Sovetov Samara") && access) {
+                while(scanner.hasNext()) {
+                    if (scanner.next().equals("playerId") && scanner.nextInt()==id) {
+                        while (scanner.hasNext()) {
+                            String string = scanner.next();
+                            if (string.equals("playerId") || string.equals("managerName")) { break; }
+                            if (string.equals("arialsWon")) {
+                                scanner.next();
+//                                scanner.next();
+                                scanner.useDelimiter("[\\Q\",:\\E]+");
+
+                                while (true) {
+                                    String str = scanner.next();
+                                    if (str.contains("}")) {
+                                        arialsWon+=Double.parseDouble(str.substring(0, str.length()-1));
+                                        break; }
+                                    if (str.contains(".")) {
+                                        arialsWon+=Double.parseDouble(str);
+                                    }
+                                }
+                                break;
+                            }
+                        } break;
+                    }
+                } break;
+            }
+        }
+        return arialsWon;
+    }
+
+    public static double parsedTacklesTotal (int id) throws IOException {
+        Scanner scanner = new Scanner(new FileReader(fileName));
+        String position=null;
+        boolean access=false;
+        double tacklesTotal=0;
+        while (scanner.hasNext()) {
+            if (scanner.next().equals("matchCentreData")) {
+                scanner.useDelimiter("[\\Q\",:\\E]+");
+                access = true;
+            }
+            if (scanner.next().equals("Krylya Sovetov Samara") && access) {
+                while(scanner.hasNext()) {
+                    if (scanner.next().equals("playerId") && scanner.nextInt()==id) {
+                        while (scanner.hasNext()) {
+                            String string = scanner.next();
+                            if (string.equals("playerId") || string.equals("managerName")) { break; }
+                            if (string.equals("tacklesTotal")) {
+                                scanner.next();
+//                                scanner.next();
+                                scanner.useDelimiter("[\\Q\",:\\E]+");
+
+                                while (true) {
+                                    String str = scanner.next();
+                                    if (str.contains("}")) {
+                                        tacklesTotal+=Double.parseDouble(str.substring(0, str.length()-1));
+                                        break; }
+                                    if (str.contains(".")) {
+                                        tacklesTotal+=Double.parseDouble(str);
+                                    }
+                                }
+                                break;
+                            }
+                        } break;
+                    }
+                } break;
+            }
+        }
+        return tacklesTotal;
+    }
+
+    public static double parsedTacklesSuccessful (int id) throws IOException {
+        Scanner scanner = new Scanner(new FileReader(fileName));
+        String position=null;
+        boolean access=false;
+        double tacklesSuccessful=0;
+        while (scanner.hasNext()) {
+            if (scanner.next().equals("matchCentreData")) {
+                scanner.useDelimiter("[\\Q\",:\\E]+");
+                access = true;
+            }
+            if (scanner.next().equals("Krylya Sovetov Samara") && access) {
+                while(scanner.hasNext()) {
+                    if (scanner.next().equals("playerId") && scanner.nextInt()==id) {
+                        while (scanner.hasNext()) {
+                            String string = scanner.next();
+                            if (string.equals("playerId") || string.equals("managerName")) { break; }
+                            if (string.equals("tacklesSuccessful")) {
+                                scanner.next();
+//                                scanner.next();
+                                scanner.useDelimiter("[\\Q\",:\\E]+");
+
+                                while (true) {
+                                    String str = scanner.next();
+                                    if (str.contains("}")) {
+                                        tacklesSuccessful+=Double.parseDouble(str.substring(0, str.length()-1));
+                                        break; }
+                                    if (str.contains(".")) {
+                                        tacklesSuccessful+=Double.parseDouble(str);
+                                    }
+                                }
+                                break;
+                            }
+                        } break;
+                    }
+                } break;
+            }
+        }
+        return tacklesSuccessful;
+    }
+
+    public static double parsedDribblesTotal (int id) throws IOException {
+        Scanner scanner = new Scanner(new FileReader(fileName));
+        String position=null;
+        boolean access=false;
+        double dribblesTotal=0;
+        while (scanner.hasNext()) {
+            if (scanner.next().equals("matchCentreData")) {
+                scanner.useDelimiter("[\\Q\",:\\E]+");
+                access = true;
+            }
+            if (scanner.next().equals("Krylya Sovetov Samara") && access) {
+                while(scanner.hasNext()) {
+                    if (scanner.next().equals("playerId") && scanner.nextInt()==id) {
+                        while (scanner.hasNext()) {
+                            String string = scanner.next();
+                            if (string.equals("playerId") || string.equals("managerName")) { break; }
+                            if (string.equals("dribblesAttempted")) {
+                                scanner.next();
+//                                scanner.next();
+                                scanner.useDelimiter("[\\Q\",:\\E]+");
+
+                                while (true) {
+                                    String str = scanner.next();
+                                    if (str.contains("}")) {
+                                        dribblesTotal+=Double.parseDouble(str.substring(0, str.length()-1));
+                                        break; }
+                                    if (str.contains(".")) {
+                                        dribblesTotal+=Double.parseDouble(str);
+                                    }
+                                }
+                                break;
+                            }
+                        } break;
+                    }
+                } break;
+            }
+        }
+        return dribblesTotal;
+    }
+
+    public static double parsedDribblesLost(int id) throws IOException {
+        Scanner scanner = new Scanner(new FileReader(fileName));
+        String position=null;
+        boolean access=false;
+        double dribblesLost=0;
+        while (scanner.hasNext()) {
+            if (scanner.next().equals("matchCentreData")) {
+                scanner.useDelimiter("[\\Q\",:\\E]+");
+                access = true;
+            }
+            if (scanner.next().equals("Krylya Sovetov Samara") && access) {
+                while(scanner.hasNext()) {
+                    if (scanner.next().equals("playerId") && scanner.nextInt()==id) {
+                        while (scanner.hasNext()) {
+                            String string = scanner.next();
+                            if (string.equals("playerId") || string.equals("managerName")) { break; }
+                            if (string.equals("dribblesLost")) {
+                                scanner.next();
+//                                scanner.next();
+                                scanner.useDelimiter("[\\Q\",:\\E]+");
+
+                                while (true) {
+                                    String str = scanner.next();
+                                    if (str.contains("}")) {
+                                        int tmp = str.indexOf("}");
+                                        dribblesLost+=Double.parseDouble(str.substring(0, tmp));
+                                        break; }
+                                    if (str.contains(".")) {
+                                        dribblesLost+=Double.parseDouble(str);
+                                    }
+                                }
+                                break;
+                            }
+                        } break;
+                    }
+                } break;
+            }
+        }
+        return dribblesLost;
+    }
+
 }
