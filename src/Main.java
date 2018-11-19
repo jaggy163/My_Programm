@@ -22,5 +22,6 @@ public class Main {
             FCKSPlayer player = data.get(squad[i]);
             PlayersReport.report(player);
         }
+        System.out.println();
     }
 }
