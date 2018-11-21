@@ -1,3 +1,5 @@
+package data;
+
 public class FCKSPlayer {
     private int age, weight, height, shirtNo;
     private boolean isManOfTheMatch, isFirstEleven;

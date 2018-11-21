@@ -1,3 +1,7 @@
+package data;
+
+import data.FCKSPlayer;
+
 public class PlayersReport {
     public static void report(FCKSPlayer player) {
         System.out.println();
@@ -8,7 +12,7 @@ public class PlayersReport {
         System.out.println("Позиция: " + player.getPosition() + "");
         System.out.println("Выступает под " + player.getShirtNo() + " номером");
         System.out.println("Статистика игрока в матче с Уфой, 5 ноября 2018 года:");
-        System.out.println("Рейтинг согласно сайту www.Whoscored.com : " + player.getRatings());
+        System.out.println("Рейтинг согласно сайту www.data.Whoscored.com : " + player.getRatings());
         System.out.println("Всего передач : " + (int)player.getPassesTotal());
         System.out.println("Точных передач : " + (int)player.getPassesAccurate());
         System.out.println("Тосность передач : " + (int)(100*(player.getPassesAccurate()/player.getPassesTotal())) + "%");

@@ -1,3 +1,7 @@
+package data;
+
+import data.FCKSPlayer;
+
 import java.io.IOException;
 import java.util.HashMap;
 

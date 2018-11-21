@@ -1,11 +1,14 @@
+import data.FCKSPlayer;
+import data.PlayerFilling;
+import swing.ScreenSwing;
+
+import javax.swing.*;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-//        ParsedInfo info = new ParsedInfo("D:\\Football\\UFA-KS.txt");
+//        data.ParsedInfo info = new data.ParsedInfo("D:\\Football\\UFA-KS.txt");
 //        HashMap<Integer, String> allPlayersMap = info.allPlayers();
        // String player = allPlayersMap.get(360935);
 //        System.out.println(allPlayersMap);
@@ -16,12 +19,14 @@ public class Main {
 //            System.out.println(i+1 + ": " + allPlayersMap.get(squad[i]));
 
         HashMap<Integer, FCKSPlayer> data = PlayerFilling.fill();
-        ParsedInfo info = new ParsedInfo("D:\\Football\\UFA-KS.txt");
+        data.ParsedInfo info = new data.ParsedInfo("D:\\Football\\UFA-KS.txt");
         int[] squad = info.squad();
-        for (int i=0; i<squad.length; i++) {
-            FCKSPlayer player = data.get(squad[i]);
-            PlayersReport.report(player);
-        }
-        System.out.println();
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                ScreenSwing screen = new ScreenSwing(data, squad);
+            }
+        });
+
     }
 }
