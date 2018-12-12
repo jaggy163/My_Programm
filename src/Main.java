@@ -1,8 +1,12 @@
+import com.example.Football;
 import data.FCKSPlayer;
 import data.PlayerFilling;
+import data.PlayersReport;
 import swing.ScreenSwing;
 
 import javax.swing.*;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -21,12 +25,17 @@ public class Main {
         HashMap<Integer, FCKSPlayer> data = PlayerFilling.fill();
         data.ParsedInfo info = new data.ParsedInfo("D:\\Football\\UFA-KS.txt");
         int[] squad = info.squad();
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                ScreenSwing screen = new ScreenSwing(data, squad);
-            }
-        });
+        for (int i=0; i<squad.length; i++) {
+            PlayersReport.report(data.get(squad[i]));
+        }
+
+
+        try {
+            JAXBContext context = JAXBContext.newInstance(Football.class);
+            
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
 
     }
 }

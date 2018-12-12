@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/"
+        xmlns:tns="http://www.example.com/"
+        elementFormDefault="qualified">
+    <element name = "Football">
+        <complexType>
+            <sequence>
+                <element name="footballPlayer"
+                         type="tns:footballPlayer"
+                         minOccurs="1"
+                         maxOccurs="unbounded" />
+
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="footballPlayer">
+        <sequence>
+            <element name="name" type="string" />
+            <element name="age" type="int" />
+            <element name="height" type="int" />
+            <element name="weight" type="int" />
+            <element name="pos" type="string" />
+            <element name="statistics" type="tns:Statistics" />
+        </sequence>
+        <attribute name="number" type="int" use="required" />
+    </complexType>
+
+    <complexType name="Statistics">
+        <sequence>
+            <element name="rating" type="double" />
+            <element name="totalPasses" type="double" />
+            <element name="accuratePasses" type="double" />
+            <element name="passAccuracy" type="double" />
+            <element name="keyPasses" type="double" />
+            <element name="shotsTotal" type="double" />
+            <element name="shotsOnTarget" type="double" />
+            <element name="shotsOffTarget" type="double" />
+            <element name="shotsBlocked" type="double" />
+            <element name="shotsAccuracy" type="double" />
+            <element name="clearances" type="double" />
+            <element name="interceptions" type="double" />
+            <element name="arialsTotal" type="double" />
+            <element name="arialsWon" type="double" />
+            <element name="arialsSuccesfullPersent" type="double" />
+            <element name="tacklesTry" type="double" />
+            <element name="tacklesWon" type="double" />
+            <element name="tacklesSuccesfullPersent" type="double" />
+            <element name="dribblesTotal" type="double" />
+            <element name="dribblesWon" type="double" />
+            <element name="dribblesSuccesfullPersent" type="double" />
+        </sequence>
+    </complexType>
+
+</schema>
