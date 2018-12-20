@@ -44,7 +44,7 @@ import javax.xml.bind.annotation.XmlType;
 public class Football {
 
     @XmlElement(required = true)
-    protected List<FootballPlayer> footballPlayer;
+    protected List<FootballPlayer> footballPlayer = new ArrayList<>();
 
     /**
      * Gets the value of the footballPlayer property.
@@ -73,6 +73,10 @@ public class Football {
             footballPlayer = new ArrayList<FootballPlayer>();
         }
         return this.footballPlayer;
+    }
+
+    public void add(FootballPlayer fbpl) {
+        footballPlayer.add(fbpl);
     }
 
 }
